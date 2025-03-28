@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  height: 100vh;
+  background: linear-gradient(to bottom, #87CEEB, #1E90FF);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+}
+
+.game-container {
+  position: relative;
+  width: 800px;
+  height: 300px;
+  background-color: #f0f8ff;
+  border: 4px solid #000;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+.score-box {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dino {
+  width: 50px;
+  height: 50px;
+  background-image: url('https://cdn-icons-png.flaticon.com/512/3063/3063822.png');
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  animation: run 0.1s steps(2) infinite;
+}
+
+.obstacle {
+  width: 40px;
+  height: 40px;
+  background-image: url('https://cdn-icons-png.flaticon.com/256/4930/4930395.png');
+  background-size: cover;
+  position: absolute;
+  bottom: 0;
+  right: -40px;
+}
+
+@keyframes run {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes moveObstacle {
+  from {
+    right: -40px;
+  }
+
+  to {
+    right: 100%;
+  }
+}
+
+.jump {
+  animation: jump 0.6s ease-out;
+
+}
+
+@keyframes jump {
+
+  0%,
+  100% {
+    bottom: 10px;
+  }
+
+  50% {
+    bottom: 150px;
+  }
+
+
+}
